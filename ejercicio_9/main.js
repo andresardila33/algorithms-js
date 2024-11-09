@@ -2,10 +2,6 @@
 
 import { readNotes } from "../functions/index.js";
 
-window.onload = function () {
-  let btn = document.getElementById("buttom");
-  btn.onclick = runCode;
-};
 const runCode = () => {
   let avarege;
   let accumulator = 0;
@@ -32,3 +28,8 @@ const runCode = () => {
     console.log(`La nota más baja del alumno es: ${notes[0]}`);
   }
 };
+
+(() => {
+  const btn = document.getElementById("button");
+  btn.onclick = runCode;
+})();

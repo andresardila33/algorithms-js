@@ -17,6 +17,7 @@ export const readNotes = () => {
     numNull = isNull(value);
     if (numNull) break;
     if (numNull === false) valueEmpty = isEmpty(value);
+    if (valueEmpty) continue;
     if (valueEmpty === false) isNumber = isNum(value);
     if (isNumber) isOk = isRangeOk(value, 0, 10);
     if (isNumber && isOk) {
