@@ -11,7 +11,7 @@ const runCode = () => {
     product = numTwo * numThree;
     //Salida
     console.log(`El producto del número dos y el número tres es ${product}`);
-  } else if (numOne !== undefined && numOne < 0) {
+  } else if (numOne !== undefined && numOne <= 0) {
     total = numTwo + numThree;
     //Salida
     console.log(`El total del número dos y el número tres es ${total}`);

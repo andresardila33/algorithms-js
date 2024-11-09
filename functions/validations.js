@@ -1,7 +1,14 @@
 export const isNum = (value) => {
   const numbers = "-0123456789";
-  let bool = numbers.includes(value) ? true : false;
-  if (bool === false) console.log("El valor ingresado, no es un número");
+  let bool;
+  for (const element of value) {
+    bool = numbers.includes(element) ? true : false;
+    if (bool === false) {
+      console.log("El valor ingresado, no es un número");
+      break;
+    }
+  }
+
   //Salida
   return bool;
 };
