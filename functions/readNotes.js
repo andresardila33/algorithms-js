@@ -1,6 +1,6 @@
 "use strict";
 
-import { isNull, isNum, isRangeOk } from "./validations.js";
+import { isNull, isNum, isEmpty, isRangeOk } from "./validations.js";
 
 export const readNotes = () => {
   //Declarar variables
@@ -9,12 +9,15 @@ export const readNotes = () => {
   let counter = 1;
   let isNumber = false;
   let numNull = false;
+  let valueEmpty = false;
   let isOk = false;
   let options = ["primera", "segunda", "tercera", "cuarta", "quinta"];
   while (counter < 6) {
     value = prompt(`Ingrese la ${options[counter - 1]} nota del alumno: `);
     numNull = isNull(value);
-    if (numNull === false) isNumber = isNum(value);
+    if (numNull) break;
+    if (numNull === false) valueEmpty = isEmpty(value);
+    if (valueEmpty === false) isNumber = isNum(value);
     if (isNumber) isOk = isRangeOk(value, 0, 10);
     if (isNumber && isOk) {
       if (counter === 1) numOne = Number(value);
