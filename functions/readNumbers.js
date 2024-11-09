@@ -14,12 +14,7 @@ export const readNumbers = () => {
   for (let i = 0; i < 3; i++) {
     value = prompt(`Ingrese el ${options[i]} número: `);
     numNull = isNull(value);
-    if (numNull) {
-      numOne = "undefined";
-      numTwo = "undefined";
-      numThree = "undefined";
-      break;
-    }
+    if (numNull) break;
     if (numNull === false) valueEmpty = isEmpty(value);
     if (valueEmpty === false) isNumber = isNum(value);
     if (isNumber) {
