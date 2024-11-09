@@ -3,10 +3,6 @@
 //Importar modulos
 import { readNumbers } from "../functions/index.js";
 
-window.onload = () => {
-  let btn = document.getElementById("buttom");
-  btn.onclick = runCode;
-};
 //Proceso
 const runCode = () => {
   const { numOne, numTwo, numThree } = readNumbers();
@@ -18,7 +14,7 @@ const runCode = () => {
     } else if (numTwo === numOne + numThree) {
       //Salida
       console.log(`El segundo número es la suma del primero y el tercero`);
-    } else if (nunumThree === numOne + numTwo) {
+    } else if (numThree === numOne + numTwo) {
       //Salida
       console.log(`El tercer número es la suma del primero y el segundo`);
     } else {
@@ -27,3 +23,9 @@ const runCode = () => {
     }
   }
 };
+
+//Función anonima autoinvocada
+(() => {
+  const btn = document.getElementById("button");
+  btn.onclick = runCode;
+})();
